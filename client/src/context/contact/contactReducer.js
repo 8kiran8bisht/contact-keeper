@@ -19,7 +19,7 @@ export default(state, action)=>{
         ...state,
         contacts: action.payload,
         loading:false
-      }
+      };
     case ADD_CONTACT:
     return {
       ...state,
@@ -55,7 +55,7 @@ export default(state, action)=>{
       return{
         ...state,
         current:null
-      }
+      };
     case FILTER_CONTACTS:
       return{
         ...state,
@@ -65,17 +65,17 @@ export default(state, action)=>{
             return contact.name.match(regex) || contact.email.match(regex);
           }
         ),
-      }
+      };
       case CLEAR_FILTER:
         return{
           ...state,
           filtered:null
-        }
+        };
       case CONTACT_ERROR:
         return{
         ...state,
         error:action.payload
-      }
+      };
     default:
       return state;
   }

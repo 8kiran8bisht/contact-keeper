@@ -8,9 +8,10 @@ export const UPDATE_CONTACT = 'UPDATE_CONTACT';
 export const FILTER_CONTACTS = 'FILTER_CONTACTS';
 export const CLEAR_CONTACTS= 'CLEAR_CONTACTS';
 export const CLEAR_FILTER = 'CLEAR_FILTER';
+export const CONTACT_ERROR = 'CONTACT_ERROR';
 export const SET_ALERT = 'SET_ALERT';
 export const REMOVE_ALERT = 'REMOVE_ALERT';
-export const CONTACT_ERROR = 'CONTACT_ERROR';
+
 
 //auth
 export const REGISTER_SUCCESS = 'REGISTER_SUCCESS';

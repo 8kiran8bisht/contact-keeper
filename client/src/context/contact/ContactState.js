@@ -50,15 +50,13 @@ dispatch({
   }
   try{
     const res= await axios.post('/api/contacts',contact,config);
-    dispatch({type:ADD_CONTACT,payload:res.data})
-
+    dispatch({type:ADD_CONTACT,payload:res.data});
   }catch(err){
     dispatch({
       type: CONTACT_ERROR,
-      payload:err.response.msg
-  })
+      payload:err.response.data.msg
+  });
   }
-   dispatch({type:ADD_CONTACT,payload: contact})
  };
 
  // Delete Contact
@@ -76,8 +74,8 @@ dispatch({
  }
 //clear Contacts
 
-const clearContext =()=>{
-  dispatch({type:   CLEAR_CURRENT})
+const clearContact =()=>{
+  dispatch({type:   CLEAR_CONTACTS})
 }
  //Set Current Contact
 const setCurrent = contact=>{
@@ -85,7 +83,7 @@ const setCurrent = contact=>{
 }
  //Clear current Contact
  const clearCurrent = ()=>{
-  dispatch({type: CLEAR_CONTACTS});
+  dispatch({type: CLEAR_CURRENT});
 }
  //update the contact
  const  updateContact = async contact =>{
@@ -125,7 +123,7 @@ const setCurrent = contact=>{
           clearCurrent,
           addContact,
           deleteContact,
-          clearContext,
+          clearContact,
           updateContact,
           filterContacts,
           clearFilter,
